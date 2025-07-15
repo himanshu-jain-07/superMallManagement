@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare Products - Super Mall</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-box">
+    <h2>Compare Products</h2>
+    <input type="text" id="search" placeholder="Search product name..." oninput="compareProducts()" />
+    <div id="results"></div>
+  </div>
+
+  <script>
+    let allProducts = [];
+
+    fetch('./data/shops.json')
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(shop => {
+          shop.products.forEach(prod => {
+            allProducts.push({
+              ...prod,
+              shop: shop.name,
+              category: shop.category
+            });
+          });
+        });
+      });
+
+    function compareProducts() {
+      const search = document.getElementById("search").value.toLowerCase();
+      const results = document.getElementById("results");
+      const matched = allProducts.filter(p => p.name.toLowerCase().includes(search));
+
+      results.innerHTML = matched.map(p => `
+        <div class="shop-card">
+          <h3>${p.name}</h3>
+          <p><strong>Price:</strong> ₹${p.price}</p>
+          <p><strong>Feature:</strong> ${p.features}</p>
+          <p><strong>Shop:</strong> ${p.shop} (${p.category})</p>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Mall Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Super Mall Web Application</h1>
+    <nav>
+      <a href="login.html">Admin Login</a> |
+      <a href="compare.html">Compare Products</a>
+      <select id="categoryFilter" onchange="handleCategoryFilter(this.value)">
+        <option value="">-- Filter by Category --</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Grocery">Grocery</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <section id="shop-list"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Super Mall</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

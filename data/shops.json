@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Fashion World",
+    "category": "Clothing",
+    "floor": "1st",
+    "offers": ["20% Off", "Buy 1 Get 1"],
+    "products": [
+      { "name": "T-shirt", "price": 500, "features": "Cotton" },
+      { "name": "Jeans", "price": 1200, "features": "Stretchable" }
+    ]
+  },
+  {
+    "name": "Gadget Hub",
+    "category": "Electronics",
+    "floor": "2nd",
+    "offers": ["10% Cashback"],
+    "products": [
+      { "name": "Smartphone", "price": 15000, "features": "64MP Camera" }
+    ]
+  },
+  {
+    "name": "Daily Mart",
+    "category": "Grocery",
+    "floor": "Ground",
+    "offers": ["Flat ₹50 Off"],
+    "products": [
+      { "name": "Rice Pack", "price": 250, "features": "5kg" },
+      { "name": "Wheat Flour", "price": 300, "features": "10kg" }
+    ]
+  }
+]
